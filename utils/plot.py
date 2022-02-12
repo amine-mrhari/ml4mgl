@@ -1,16 +1,22 @@
-%matplotlib inline
+import inline as inline
+import matplotlib
+import matplotlib as plt
+
 from IPython import display
 
-def use_svg_display():  #@save
+
+def use_svg_display():  # @save
     """Use the svg format to display a plot in Jupyter."""
     display.set_matplotlib_formats('svg')
 
-def set_figsize(figsize=(3.5, 2.5)):  #@save
+
+def set_figsize(figsize=(3.5, 2.5)):  # @save
     """Set the figure size for matplotlib."""
     use_svg_display()
     plt.rcParams['figure.figsize'] = figsize
 
-#@save
+
+# @save
 def set_axes(axes, xlabel, ylabel, xlim, ylim, xscale, yscale, legend):
     """Set the axes for matplotlib."""
     axes.set_xlabel(xlabel)
@@ -23,7 +29,8 @@ def set_axes(axes, xlabel, ylabel, xlim, ylim, xscale, yscale, legend):
         axes.legend(legend)
     axes.grid()
 
-#@save
+
+# @save
 def plot(X, Y=None, xlabel=None, ylabel=None, legend=None, xlim=None,
          ylim=None, xscale='linear', yscale='linear',
          fmts=('-', 'm--', 'g-.', 'r:'), figsize=(3.5, 2.5), axes=None):
@@ -32,7 +39,7 @@ def plot(X, Y=None, xlabel=None, ylabel=None, legend=None, xlim=None,
         legend = []
 
     set_figsize(figsize)
-    axes = axes if axes else d2l.plt.gca()
+    axes = axes if axes else plt.pyplot.gca()
 
     # Return True if `X` (tensor or list) has 1 axis
     def has_one_axis(X):
