@@ -1,5 +1,3 @@
-import inline as inline
-import matplotlib
 import matplotlib as plt
 
 from IPython import display
